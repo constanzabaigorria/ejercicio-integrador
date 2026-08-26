@@ -1,0 +1,48 @@
+### 
+GET http://127.0.0.1:8000/items/
+Accept: application/json
+
+
+### 
+GET http://127.0.0.1:8000/items/?limit=20&offset=40
+Accept: application/json
+
+
+### 
+GET http://127.0.0.1:8000/items/?order_by=updated_at
+Accept: application/json
+
+
+###
+GET http://127.0.0.1:8000/items/?tags=fastapi&tags=react
+Accept: application/json
+
+
+### 
+GET http://127.0.0.1:8000/items/?limit=10&offset=0&order_by=created_at&tags=api&tags=docs
+Accept: application/json
+
+
+### 
+GET http://127.0.0.1:8000/items/?limit=0
+Accept: application/json
+
+
+### 
+GET http://127.0.0.1:8000/items/?limit=101
+Accept: application/json
+
+
+### 
+GET http://127.0.0.1:8000/items/?offset=-1
+Accept: application/json
+
+
+###
+GET http://127.0.0.1:8000/items/?order_by=name
+Accept: application/json
+
+
+### 
+GET http://127.0.0.1:8000/items/?limit=abc
+Accept: application/json

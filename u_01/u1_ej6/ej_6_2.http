@@ -1,0 +1,29 @@
+### 
+GET http://127.0.0.1:8000/items/10?q=hola
+Accept: application/json
+
+
+### 
+GET http://127.0.0.1:8000/items/1000?q=test
+Accept: application/json
+
+
+### falta query param
+GET http://127.0.0.1:8000/items/10
+Accept: application/json
+
+
+### item_id cero
+GET http://127.0.0.1:8000/items/0?q=hola
+Accept: application/json
+
+
+### item_id fuera de rango
+GET http://127.0.0.1:8000/items/1001?q=hola
+Accept: application/json
+
+
+### no es numero
+GET http://127.0.0.1:8000/items/abc?q=hola
+Accept: application/json
+
