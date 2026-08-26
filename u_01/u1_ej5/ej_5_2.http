@@ -1,0 +1,82 @@
+### con tax
+POST http://127.0.0.1:8000/items/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Laptop",
+  "description": "Una computadora potente",
+  "price": 1200.50,
+  "tax": 120.00
+}
+
+
+### sin tax
+POST http://127.0.0.1:8000/items/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Mouse",
+  "description": "Inalámbrico",
+  "price": 25.99,
+  "tax": null
+}
+
+###campos minimos
+POST http://127.0.0.1:8000/items/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Teclado",
+  "price": 80.00
+}
+
+
+### error
+POST http://127.0.0.1:8000/items/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "ErrorItem",
+  "price": "ochenta"
+}
+
+
+### actualiza item
+PUT http://127.0.0.1:8000/items/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Laptop Pro",
+  "description": "Actualizada",
+  "price": 1500.00,
+  "tax": 150.00
+}
+
+
+### actualiza item con query param q
+PUT http://127.0.0.1:8000/items/2?q=modo_debug
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Monitor",
+  "description": "27 pulgadas",
+  "price": 300.00,
+  "tax": 30.00
+}
+
+
+### error
+PUT http://127.0.0.1:8000/items/abc?q=test
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Monitor",
+  "price": 300.00
+}
