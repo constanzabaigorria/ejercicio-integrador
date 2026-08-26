@@ -1,0 +1,16 @@
+@base = http://127.0.0.1:8000
+
+
+###
+POST {{base}}/items/?name=Plumbus
+Accept: application/json
+
+
+###
+POST {{base}}/items/?name=Portal%20Gun
+Accept: application/json
+
+
+###
+POST {{base}}/items/
+Accept: application/json

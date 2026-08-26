@@ -1,0 +1,18 @@
+### Configuración del Host
+@host = http://127.0.0.1:8000
+
+
+### CASO 0
+GET {{host}}/caso-0/sin-reglas
+
+
+### CASO 1
+GET {{host}}/caso-1/exito
+
+
+###CASO 2
+GET {{host}}/caso-2/error-servidor
+
+
+### CASO 3
+GET {{host}}/caso-3/filtrado

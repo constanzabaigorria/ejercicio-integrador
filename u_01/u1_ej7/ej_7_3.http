@@ -1,0 +1,55 @@
+@base = http://127.0.0.1:8000
+
+
+###
+POST {{base}}/users/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "carlos",
+  "email": "carlos@example.com",
+  "full_name": "Carlos Martínez",
+  "password": "Secreta123!"
+}
+
+
+###
+POST {{base}}/users/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "ana",
+  "email": "ana@example.com",
+  "password": "ClaveSegura!2026"
+}
+
+
+### error mail
+POST {{base}}/users/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "pepe",
+  "email": "no-es-email",
+  "full_name": "Pepe",
+  "password": "123456"
+}
+
+
+### error password
+POST {{base}}/users/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "maria",
+  "email": "maria@example.com",
+  "full_name": "María López"
+}
+
+### error metodo
+GET {{base}}/users/
+Accept: application/json
