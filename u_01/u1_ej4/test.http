@@ -1,0 +1,87 @@
+### 
+GET http://127.0.0.1:8000/items/
+Accept: application/json
+
+###  items con parámetros de consulta (Query Params)
+GET http://127.0.0.1:8000/items/?skip=1&limit=1
+Accept: application/json
+
+### item por ID (sin query param q)
+GET http://127.0.0.1:8000/items/abc
+Accept: application/json
+
+### item por ID (con query param q)
+GET http://127.0.0.1:8000/items/abc?q=hola
+Accept: application/json
+
+### item por ID (con espacios en q)
+GET http://127.0.0.1:8000/items/abc?q=hola%20mundo
+Accept: application/json
+
+### item por ID (con q vacío)
+GET http://127.0.0.1:8000/items/abc?q=
+Accept: application/json
+
+### item por ID (con caracteres especiales en q)
+GET http://127.0.0.1:8000/items/abc?q=monitor%26teclado
+Accept: application/json
+
+
+### user item sin query params 
+GET http://127.0.0.1:8000/users/7/items/abc
+Accept: application/json
+
+
+### user item con query param q
+GET http://127.0.0.1:8000/users/7/items/abc?q=hola
+Accept: application/json
+
+
+### user item corta (short=true)
+GET http://127.0.0.1:8000/users/7/items/abc?short=true
+Accept: application/json
+
+
+### user item 
+GET http://127.0.0.1:8000/users/7/items/abc?q=hola&short=true
+Accept: application/json
+
+
+### user item otro
+GET http://127.0.0.1:8000/users/7/items/abc?short=1
+Accept: application/json
+
+###
+GET http://127.0.0.1:8000/users/7/items/abc?short=true
+Accept: application/json
+
+
+### User item error (user_id debe ser int)
+GET http://127.0.0.1:8000/users/abc/items/xyz
+Accept: application/json
+
+
+
+### Query param requerido (needy) funciona
+GET http://127.0.0.1:8000/items1/abc?needy=si
+Accept: application/json
+
+
+### Query param requerido (needy) error
+GET http://127.0.0.1:8000/items1/123?needy=pan
+Accept: application/json
+
+
+### falta needy 
+GET http://127.0.0.1:8000/items1/abc
+Accept: application/json
+
+
+### con espacios (URL encoded)
+GET http://127.0.0.1:8000/items/abc?needy=necesito%20algo
+Accept: application/json
+
+
+### caracteres especiales (ej: & debe ir codificado)
+GET http://127.0.0.1:8000/items/abc?needy=monitor%20%26%20teclado
+Accept: application/json
